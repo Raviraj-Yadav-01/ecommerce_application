@@ -1,8 +1,6 @@
 
 import 'dart:async';
-import 'package:ecommerce_application/app_constraints/app_routes/app_routes.dart';
 import 'package:flutter/material.dart';
-import '../login/login_page.dart';
 
 class SplashPage extends StatefulWidget {
 const SplashPage({super.key});
@@ -17,12 +15,11 @@ class _SplashPageState extends State<SplashPage> {
  @override
   void initState() {
     super.initState();
-
    Timer(Duration(seconds:5, milliseconds:50),(){
    Navigator.pushReplacementNamed(context, AppRoutes.login);
    });
-
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

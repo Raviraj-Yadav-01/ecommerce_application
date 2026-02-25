@@ -44,8 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: Padding(padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
