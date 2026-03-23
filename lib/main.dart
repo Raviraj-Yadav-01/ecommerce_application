@@ -1,17 +1,24 @@
-import 'package:ecommerce_application/screen/splash_page/splash_page.dart';
+import 'package:ecommerce_application/core/constants/apps_urls.dart';
+import 'package:ecommerce_application/core/services/api_services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'core/routes/app_routes.dart';
+import 'features/on_boarding/presentations/bloc/user_bloc.dart';
 
-import 'app_constraints/app_routes/app_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(create: (context) => UserBloc(apiService: ApiService())),
+  ], child: MyApp()));
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    print(AppUrls.registration_url);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoutes.splash,

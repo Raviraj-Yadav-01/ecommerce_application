@@ -1,6 +1,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../../../../../core/routes/app_routes.dart';
 
 class SplashPage extends StatefulWidget {
 const SplashPage({super.key});
@@ -10,8 +11,6 @@ State<SplashPage> createState() => _SplashPageState();
 }
 
 class _SplashPageState extends State<SplashPage> {
-
-
  @override
   void initState() {
     super.initState();

@@ -1,7 +1,6 @@
-import 'dart:ui';
-import 'package:dotted_border/dotted_border.dart';
-import 'package:ecommerce_application/app_constraints/app_routes/app_routes.dart';
+
 import 'package:flutter/material.dart';
+import '../../../../../core/routes/app_routes.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -48,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
                     TextFormField(
                       decoration: InputDecoration(
                         hintText: "Enter your email here",
@@ -99,6 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                     ),
+
                   ],
                 ),
               ),
