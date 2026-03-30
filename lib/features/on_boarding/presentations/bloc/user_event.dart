@@ -2,7 +2,6 @@
 abstract class UserEvent{}
 
 class UserAuthenticateEvent extends UserEvent{
-
   String email;
   String pass;
  UserAuthenticateEvent({required this.email, required this.pass});

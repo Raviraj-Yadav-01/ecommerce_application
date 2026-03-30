@@ -4,10 +4,12 @@ import 'package:ecommerce_application/features/on_boarding/presentations/bloc/us
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/routes/app_routes.dart';
 import '../../bloc/user_bloc.dart';
 import '../../bloc/user_state.dart';
 
 class SignUpPage extends StatefulWidget{
+  const SignUpPage({super.key});
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
@@ -40,7 +42,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      resizeToAvoidBottomInset: false,
       body: Form(
         key : formkey,
         child: Container(
@@ -250,8 +252,10 @@ class _SignUpPageState extends State<SignUpPage> {
 
                             if(state is UserSuccessState){
                               setState((){isCreatingAccount = false;});
-                              Navigator.pop(context);
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text("Your Account has been create SuccessFully!!"),backgroundColor: Colors.green,));
+
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text("Account create SuccessFully!!"),backgroundColor: Colors.green,));
+
+                              Navigator.pushReplacementNamed(context, AppRoutes.login);
                             }
 
                           },
