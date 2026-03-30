@@ -8,16 +8,11 @@ class AppUrls{
   ///login
  static const String registration_url = "$base_url/ecommerce-api/user/registration";
 
-  ///cat
+  ///login url
  static const String login_url = "$base_url/ecommerce-api/user/login";
 
-  ///product
-
-
-  ///cart
-
-
-  ///order
+/// category url
+ static const String cat_url = "$base_url/ecommerce-api/categories";
 
 
 }

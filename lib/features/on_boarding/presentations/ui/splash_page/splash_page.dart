@@ -1,6 +1,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../../core/routes/app_routes.dart';
 
 class SplashPage extends StatefulWidget {
@@ -14,8 +15,18 @@ class _SplashPageState extends State<SplashPage> {
  @override
   void initState() {
     super.initState();
-   Timer(Duration(seconds:5, milliseconds:50),(){
-   Navigator.pushReplacementNamed(context, AppRoutes.login);
+   Timer(Duration(seconds:3, milliseconds:30),()async{
+
+     final prefs = await SharedPreferences.getInstance();
+     bool isRegistered = prefs.getBool('isRegistered') ?? false;
+
+     if(isRegistered){
+       //  Pehle se registered hai — seedha HomePage
+       Navigator.pushReplacementNamed(context, AppRoutes.dashboard);
+     }else{
+       // Pehli baar — Registration page pe bhejo
+       Navigator.pushReplacementNamed(context, AppRoutes.login);
+     }
    });
   }
 
